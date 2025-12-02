@@ -7,16 +7,16 @@
 
   <style>
     :root{
-      --header1:#006d77;
-      --header2:#0096a8;
-      --accent:#ffb703;
-      --accent-soft:#ffe8a3;
-      --bg:#f4f7fb;
+      --red-main:#d62828;        /* алый основной */
+      --red-soft:#ff7b7b;        /* алый мягкий */
+      --green-main:#2b9348;      /* зелёный акцент */
+      --green-soft:#b7efc5;      /* светло-зелёный */
+      --bg:#fff5f5;
       --card:#ffffff;
-      --text:#163043;
-      --danger:#d32f2f;
-      --success:#2e7d32;
-      --border-soft:#dde5f0;
+      --text:#2c1414;
+      --border-soft:#f2c4c4;
+      --danger:#b71c1c;
+      --success:#1b5e20;
     }
 
     *{
@@ -32,7 +32,7 @@
     }
 
     header{
-      background:linear-gradient(90deg,var(--header1),var(--header2));
+      background:linear-gradient(90deg,var(--red-main),var(--red-soft));
       color:#fff;
       padding:10px 16px;
       display:flex;
@@ -48,17 +48,17 @@
     }
 
     .logo-circle{
-      width:40px;
-      height:40px;
+      width:42px;
+      height:42px;
       border-radius:50%;
-      overflow:hidden;
-      border:2px solid #ffd54f;
+      border:2px solid var(--green-soft);
       background:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:0.7rem;
-      color:#ff6f00;
+      font-size:0.75rem;
+      color:var(--red-main);
+      font-weight:700;
     }
 
     .brand-text{
@@ -82,7 +82,7 @@
     }
 
     #userSummary b{
-      color:var(--accent-soft);
+      color:var(--green-soft);
     }
 
     main{
@@ -102,11 +102,13 @@
       border-radius:16px;
       box-shadow:0 2px 10px rgba(0,0,0,0.12);
       padding:18px 18px 20px;
+      border-top:4px solid var(--green-main);
     }
 
     .login-card h2{
       margin-bottom:8px;
       font-size:1.15rem;
+      color:var(--red-main);
     }
 
     .login-card p{
@@ -128,12 +130,12 @@
       border:1px solid var(--border-soft);
       outline:none;
       font-size:0.9rem;
-      background:#fdfefe;
+      background:#fffdfd;
     }
 
     input:focus{
-      border-color:var(--header2);
-      box-shadow:0 0 0 1px rgba(0,150,168,0.2);
+      border-color:var(--red-main);
+      box-shadow:0 0 0 1px rgba(214,40,40,0.25);
     }
 
     .btn{
@@ -150,19 +152,19 @@
     }
 
     .btn-primary{
-      background:var(--header1);
+      background:var(--red-main);
       color:#fff;
     }
 
     .btn-ghost{
-      background:#edf5ff;
-      color:var(--header1);
+      background:#ffe3e3;
+      color:var(--red-main);
     }
 
     .btn-outline{
       background:transparent;
-      color:var(--header1);
-      border:1px solid var(--header1);
+      color:var(--red-main);
+      border:1px solid var(--red-main);
     }
 
     .btn:active{transform:scale(0.97);}
@@ -209,7 +211,8 @@
       padding:3px 9px;
       border-radius:999px;
       font-size:0.75rem;
-      background:#e0f2f1;
+      background:var(--green-soft);
+      color:#1b4332;
     }
 
     .star-pull{
@@ -236,7 +239,7 @@
       border-radius:14px;
       padding:10px 12px;
       box-shadow:0 1px 3px rgba(0,0,0,0.12);
-      border-left:5px solid #ffe0b2;
+      border-left:5px solid var(--green-soft);
       cursor:pointer;
     }
 
@@ -275,7 +278,7 @@
       box-shadow:0 2px 8px rgba(0,0,0,0.15);
       padding:12px 12px 8px;
       margin-bottom:10px;
-      border-top:4px solid var(--accent);
+      border-top:4px solid var(--green-main);
     }
 
     .topic-header-title{
@@ -305,26 +308,30 @@
     }
 
     .rule-box{
-      border-left:4px solid #90caf9;
-      background:#eef5ff;
+      border-left:4px solid var(--green-main);
+      background:#f4fff6;
       padding:8px 10px;
       font-size:0.88rem;
       margin-bottom:8px;
     }
 
-    .rule-box b{color:#0d47a1;}
-    .rule-box + .rule-box{border-left-color:#ffb3a7;background:#fff5f2;}
+    .rule-box b{color:#1b5e20;}
+    .rule-box + .rule-box{
+      border-left-color:var(--red-soft);
+      background:#fff5f5;
+    }
+
     .formula-box{
-      border-left:4px solid #aed581;
-      background:#f4ffe8;
+      border-left:4px solid #ffa726;
+      background:#fff7e6;
       padding:7px 10px;
       font-size:0.86rem;
       margin-bottom:10px;
     }
 
     .exercise-block{
-      border-left:4px solid #4fc3f7;
-      background:#f1f9ff;
+      border-left:4px solid #ffcc80;
+      background:#fffaf3;
       padding:8px 10px 10px;
       font-size:0.86rem;
       margin-top:10px;
@@ -334,6 +341,7 @@
     .exercise-title{
       font-weight:600;
       margin-bottom:4px;
+      color:var(--red-main);
     }
 
     .exercise-note{
@@ -390,12 +398,12 @@
 <header>
   <div class="brand">
     <div class="logo-circle">
-      <!-- сюда можешь поставить <img src="girl.png"> -->
+      <!-- сюда можно вставить <img src="girl.png"> -->
       AI
     </div>
     <div class="brand-text">
       <h1>ENGLISH WITH AI BAYAN</h1>
-      <span>Grade 7 · Grammar · interactive topics</span>
+      <span>Grade 7 · Grammar B · Modules 1–9</span>
     </div>
   </div>
   <div id="userSummary">
@@ -412,14 +420,14 @@
       <p>Enter your <b>Name</b> and <b>Code</b>. Ask your teacher for the code.</p>
 
       <label for="loginName">Name</label>
-      <input id="loginName" type="text" placeholder="Example: Sырым7Б" />
+      <input id="loginName" type="text" placeholder="Example: Сырым7Б" />
 
       <label for="loginCode">Code</label>
       <input id="loginCode" type="number" placeholder="Example: 701" />
 
       <div class="hint">
-        For this demo: any name + code from <b>701–720</b> is accepted.<br>
-        (You можешь потом поменять диапазон кодов под свой класс.)
+        For demo: any name + code from <b>701–720</b> is accepted.<br>
+        (You can change this range for your class later.)
       </div>
 
       <div id="loginError" class="error-msg"></div>
@@ -435,9 +443,9 @@
   <section id="mainScreen" class="screen">
     <div class="topics-header">
       <div>
-        <h2>Grade 7 – Grammar topics</h2>
+        <h2>Grade 7 – Grammar topics (Modules 1–9)</h2>
         <div class="pill">
-          Topic stars available: about 80+
+          30 topics • each topic has exercises and stars
         </div>
       </div>
       <div class="star-pull">
@@ -466,321 +474,640 @@
 </main>
 
 <script>
-/* ---------- DATA ---------- */
-
+/* ---------- TOPICS DATA (30 тем) ---------- */
 const topics = [
+  /* MODULE 1 */
   {
     id:1,
-    title:"Past Simple – regular and irregular verbs",
+    title:"Present Simple vs Present Continuous",
     level:"Module 1",
-    ruleEn:`<b>Rule (EN):</b> We use the Past Simple to talk about <b>finished actions</b> in the past.<br>
-            Regular verbs: <i>+ed</i> (play → played, open → opened).<br>
-            Irregular verbs: 2nd form (go → went, see → saw).`,
-    ruleRu:`<b>Правило (RU):</b> Past Simple используем для <b>завершённых действий</b> в прошлом.<br>
-            Правильные глаголы: <i>+ed</i>. Неправильные – вторая форма (went, saw и т.д.).`,
-    formula:`(+): subject + V2<br>
-             (-): subject + didn’t + V1<br>
-             (?): Did + subject + V1?`,
+    ruleEn:`<b>Rule (EN):</b> Use <b>Present Simple</b> for habits, routines and facts.<br>
+            Use <b>Present Continuous</b> for actions happening <i>now</i> or around now.`,
+    ruleRu:`<b>Правило (RU):</b> <b>Present Simple</b> – привычки, расписание, факты.<br>
+            <b>Present Continuous</b> – действие происходит <i>сейчас</i> или временная ситуация.`,
+    formula:`PS: subject + V1 / V1+s<br>
+             PC: subject + am / is / are + V-ing`,
     exercises:[
       {
         id:"1a",
-        title:"Ex.1 – Choose the correct form (Past Simple).",
+        title:"Ex.1 – Choose Present Simple or Present Continuous.",
         note:"Each correct answer gives you 1 star.",
         questions:[
           {
             id:"q1",
-            text:"1) We ___ to the cinema yesterday.",
-            options:["go","went","goes"],
-            correct:"went"
+            text:"1) She ___ (go) to school every day.",
+            options:["goes","is going","go"],
+            correct:"goes"
           },
           {
             id:"q2",
-            text:"2) My brother ___ breakfast this morning.",
-            options:["didn’t eat","doesn’t eat","not ate"],
-            correct:"didn’t eat"
-          },
-          {
-            id:"q3",
-            text:"3) She ___ a new bike last week.",
-            options:["buyed","bought","buys"],
-            correct:"bought"
-          },
-          {
-            id:"q4",
-            text:"4) ___ you ___ the match on TV?",
-            options:["Did / watch","Do / watched","Did / watched"],
-            correct:"Did / watch"
+            text:"2) Listen! The birds ___ (sing).",
+            options:["sing","are singing","sings"],
+            correct:"are singing"
           }
         ]
       },
       {
         id:"1b",
-        title:"Ex.2 – Complete with the Past Simple.",
-        note:"Write the correct verb form.",
+        title:"Ex.2 – Choose the correct option.",
+        note:"Present Simple = habit, Present Continuous = now.",
         questions:[
           {
-            id:"q5",
-            text:"1) They ___ (visit) their grandparents on Sunday.",
-            options:["visited","visit","were visiting"],
-            correct:"visited"
+            id:"q3",
+            text:"3) I ___ (do) my homework now.",
+            options:["do","am doing","does"],
+            correct:"am doing"
           },
           {
-            id:"q6",
-            text:"2) I ___ (not see) you at school yesterday.",
-            options:["didn’t see","don’t see","wasn’t seeing"],
-            correct:"didn’t see"
-          },
-          {
-            id:"q7",
-            text:"3) He ___ (go) to London last year.",
-            options:["went","has gone","goes"],
-            correct:"went"
-          },
-          {
-            id:"q8",
-            text:"4) We ___ (not buy) that book.",
-            options:["didn’t buy","haven’t bought","don’t buy"],
-            correct:"didn’t buy"
+            id:"q4",
+            text:"4) They ___ (play) football on Saturdays.",
+            options:["play","are playing","plays"],
+            correct:"play"
           }
         ]
       }
     ]
   },
-
   {
     id:2,
-    title:"Past Continuous – actions in progress",
-    level:"Module 2",
-    ruleEn:`<b>Rule (EN):</b> We use the Past Continuous for actions that were <b>in progress</b> at a specific moment in the past.<br>
-            Example: At 6 p.m. yesterday, I <i>was doing</i> my homework.`,
-    ruleRu:`<b>Правило (RU):</b> Past Continuous описывает действие, которое <b>происходило</b> в определённый момент в прошлом.`,
-    formula:`subject + was / were + V-ing`,
+    title:"Singular & Plural nouns",
+    level:"Module 1",
+    ruleEn:`<b>Rule (EN):</b> Most plurals: add <b>-s</b> (book → books).<br>
+            After ch, sh, s, x, o: add <b>-es</b> (bus → buses).<br>
+            Some nouns are irregular (child → children, man → men).`,
+    ruleRu:`<b>Правило (RU):</b> Большинство существительных образуют множественное число с <b>-s</b>.<br>
+            После ch, sh, s, x, o → <b>-es</b>. Есть неправильные формы (child → children).`,
+    formula:`one book – two books<br>
+             one bus – two buses<br>
+             one child – two children`,
     exercises:[
       {
         id:"2a",
-        title:"Ex.1 – Complete with Past Continuous.",
-        note:"Choose the correct form.",
+        title:"Ex.1 – Make plural forms.",
+        note:"Choose the correct plural.",
         questions:[
           {
             id:"q1",
-            text:"1) I ___ dinner at 6 p.m. yesterday.",
-            options:["cooked","was cooking","am cooking"],
-            correct:"was cooking"
+            text:"1) one bus – two ___",
+            options:["buss","buses","busies"],
+            correct:"buses"
           },
           {
             id:"q2",
-            text:"2) They ___ football when it started to rain.",
-            options:["were playing","played","play"],
-            correct:"were playing"
-          },
-          {
-            id:"q3",
-            text:"3) We ___ TV at 9 o’clock.",
-            options:["were watching","watched","watch"],
-            correct:"were watching"
-          },
-          {
-            id:"q4",
-            text:"4) My parents ___ to work at 8 a.m.",
-            options:["were driving","drove","are driving"],
-            correct:"were driving"
+            text:"2) one child – two ___",
+            options:["childs","children","childes"],
+            correct:"children"
           }
         ]
       },
       {
         id:"2b",
-        title:"Ex.2 – Negative sentences.",
-        note:"Choose the correct negative form.",
+        title:"Ex.2 – Choose singular or plural.",
+        note:"Look at the sentence meaning.",
         questions:[
           {
-            id:"q5",
-            text:"1) We ___ sleeping when the phone rang.",
-            options:["weren’t","wasn’t","didn’t"],
-            correct:"weren’t"
+            id:"q3",
+            text:"3) There are many ___ in the park.",
+            options:["child","children","childs"],
+            correct:"children"
           },
           {
-            id:"q6",
-            text:"2) I ___ listening to music.",
-            options:["wasn’t","weren’t","didn’t"],
-            correct:"wasn’t"
-          },
-          {
-            id:"q7",
-            text:"3) They ___ talking to the teacher.",
-            options:["weren’t","didn’t","wasn’t"],
-            correct:"weren’t"
-          },
-          {
-            id:"q8",
-            text:"4) She ___ reading a book at that time.",
-            options:["wasn’t","didn’t","weren’t"],
-            correct:"wasn’t"
+            id:"q4",
+            text:"4) This ___ is very interesting.",
+            options:["book","books"],
+            correct:"book"
           }
         ]
       }
     ]
   },
-
   {
     id:3,
-    title:"Past Simple vs Past Continuous",
-    level:"Module 2",
-    ruleEn:`<b>Rule (EN):</b> Use <b>Past Continuous</b> for the long action (background) and <b>Past Simple</b> for the short action that interrupts it.<br>
-            Pattern: Past Continuous + when + Past Simple; Past Simple + while + Past Continuous.`,
-    ruleRu:`<b>Правило (RU):</b> Past Continuous – длительное действие, Past Simple – короткое, которое его прерывает.`,
-    formula:`PC + when + PS<br>PS + while + PC`,
+    title:"Comparative & Superlative adjectives",
+    level:"Module 1",
+    ruleEn:`<b>Rule (EN):</b> Comparative compares two things (taller, more interesting).<br>
+            Superlative shows the most (the tallest, the most interesting).`,
+    ruleRu:`<b>Правило (RU):</b> Сравнительная степень – сравнение двух объектов (taller).<br>
+            Превосходная степень – самый (the tallest).`,
+    formula:`short: tall → taller → the tallest<br>
+             long: interesting → more interesting → the most interesting<br>
+             irregular: good → better → the best`,
     exercises:[
       {
         id:"3a",
-        title:"Ex.1 – Complete with the correct tense.",
-        note:"Past Simple or Past Continuous.",
+        title:"Ex.1 – Comparatives.",
+        note:"Choose the correct form.",
         questions:[
           {
             id:"q1",
-            text:"1) I ___ (walk) home when I ___ (see) my friend.",
-            options:["was walking / saw","walked / was seeing","walked / saw"],
-            correct:"was walking / saw"
+            text:"1) My house is ___ than yours.",
+            options:["biggest","bigger","more big"],
+            correct:"bigger"
           },
           {
             id:"q2",
-            text:"2) She ___ (watch) TV when the lights ___ (go) off.",
-            options:["was watching / went","watched / was going","watched / went"],
-            correct:"was watching / went"
-          },
-          {
-            id:"q3",
-            text:"3) They ___ (play) football while their parents ___ (cook).",
-            options:["were playing / were cooking","played / cooked","were playing / cooked"],
-            correct:"were playing / were cooking"
-          },
-          {
-            id:"q4",
-            text:"4) My phone ___ (ring) while I ___ (wash) the dishes.",
-            options:["rang / was washing","was ringing / washed","rang / washed"],
-            correct:"rang / was washing"
+            text:"2) English is ___ than maths for me.",
+            options:["easier","the easiest","more easy"],
+            correct:"easier"
           }
         ]
       },
       {
         id:"3b",
-        title:"Ex.2 – Choose when or while.",
-        note:"Each correct answer gives 1 star.",
+        title:"Ex.2 – Superlatives.",
+        note:"Choose the correct superlative.",
         questions:[
           {
-            id:"q5",
-            text:"1) I was reading ___ my brother was playing computer games.",
-            options:["when","while"],
-            correct:"while"
+            id:"q3",
+            text:"3) Mount Everest is ___ mountain in the world.",
+            options:["higher","the highest","the most high"],
+            correct:"the highest"
           },
           {
-            id:"q6",
-            text:"2) ___ I was walking to school, it started to snow.",
-            options:["When","While"],
-            correct:"When"
-          },
-          {
-            id:"q7",
-            text:"3) She was talking on the phone ___ she was cooking.",
-            options:["when","while"],
-            correct:"while"
-          },
-          {
-            id:"q8",
-            text:"4) He fell over ___ he was running.",
-            options:["when","while"],
-            correct:"when"
+            id:"q4",
+            text:"4) This is ___ film I’ve ever seen.",
+            options:["the best","better","good"],
+            correct:"the best"
           }
         ]
       }
     ]
   },
-
   {
     id:4,
-    title:"be going to – plans and intentions",
-    level:"Module 3",
-    ruleEn:`<b>Rule (EN):</b> Use <b>be going to</b> for plans and intentions (we decided before speaking).`,
-    ruleRu:`<b>Правило (RU):</b> be going to используем для <b>планов и намерений</b>, о которых мы решили заранее.`,
-    formula:`subject + am / is / are + going to + V1`,
+    title:"too / enough",
+    level:"Module 1",
+    ruleEn:`<b>Rule (EN):</b> <b>too</b> = more than we want (too big).<br>
+            <b>enough</b> = sufficient, не слишком мало (big enough).`,
+    ruleRu:`<b>Правило (RU):</b> <b>too</b> – слишком (too hot).<br>
+            <b>enough</b> – достаточно (warm enough).`,
+    formula:`too + adj<br>
+             adj + enough`,
     exercises:[
       {
         id:"4a",
-        title:"Ex.1 – Complete with be going to.",
-        note:"Choose the best answer.",
+        title:"Ex.1 – Choose too or enough.",
+        note:"Think about meaning.",
         questions:[
           {
             id:"q1",
-            text:"1) We ___ visit our grandparents this weekend.",
-            options:["are going to","will","go"],
-            correct:"are going to"
+            text:"1) The tea is ___ hot. I can’t drink it.",
+            options:["enough","too"],
+            correct:"too"
           },
           {
             id:"q2",
-            text:"2) She ___ buy a new dress.",
-            options:["is going to","will going to","are going to"],
-            correct:"is going to"
-          },
-          {
-            id:"q3",
-            text:"3) I ___ study for the English test tonight.",
-            options:["am going to","going to","will going"],
-            correct:"am going to"
-          },
-          {
-            id:"q4",
-            text:"4) They ___ not ___ play football today.",
-            options:["are going to","are going to not","aren’t going to"],
-            correct:"aren’t going to"
+            text:"2) The bag is big ___. All my books fit inside.",
+            options:["too","enough"],
+            correct:"enough"
           }
         ]
       },
       {
         id:"4b",
-        title:"Ex.2 – Short answers.",
-        note:"Choose yes or no with be going to.",
+        title:"Ex.2 – Complete.",
+        note:"Choose the correct option.",
         questions:[
           {
-            id:"q5",
-            text:"1) Are you going to watch the film? – ___, I am.",
-            options:["Yes","No"],
-            correct:"Yes"
+            id:"q3",
+            text:"3) He is ___ young to drive a car.",
+            options:["too","enough"],
+            correct:"too"
           },
           {
-            id:"q6",
-            text:"2) Is she going to stay at home? – ___, she isn’t.",
-            options:["Yes","No"],
-            correct:"No"
-          },
-          {
-            id:"q7",
-            text:"3) Are they going to travel in summer? – ___, they are.",
-            options:["Yes","No"],
-            correct:"Yes"
-          },
-          {
-            id:"q8",
-            text:"4) Is he going to play tennis? – ___, he isn’t.",
-            options:["Yes","No"],
-            correct:"No"
+            id:"q4",
+            text:"4) We have ___ time to finish this task.",
+            options:["too","enough"],
+            correct:"enough"
           }
         ]
       }
     ]
   },
 
+  /* MODULE 2 */
   {
     id:5,
-    title:"Will / won’t – predictions & promises",
+    title:"can / could / (be) able to",
+    level:"Module 2",
+    ruleEn:`<b>Rule (EN):</b> <b>can</b> – ability now, <b>could</b> – ability in the past.<br>
+            <b>be able to</b> – more formal, используется во всех временах.`,
+    ruleRu:`<b>Правило (RU):</b> <b>can</b> – могу сейчас, <b>could</b> – мог раньше.<br>
+            <b>be able to</b> – «быть способным», формальная форма для разных времён.`,
+    formula:`can / could + V1<br>
+             am / is / are / was / were able to + V1`,
+    exercises:[
+      {
+        id:"5a",
+        title:"Ex.1 – Choose can or could.",
+        note:"Look at the time (now / past).",
+        questions:[
+          {
+            id:"q1",
+            text:"1) When I was five, I ___ read.",
+            options:["can","could"],
+            correct:"could"
+          },
+          {
+            id:"q2",
+            text:"2) I ___ speak English and Russian.",
+            options:["can","could"],
+            correct:"can"
+          }
+        ]
+      },
+      {
+        id:"5b",
+        title:"Ex.2 – Choose can, could or be able to.",
+        note:"Pay attention to the time word.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) One day, you will ___ travel alone.",
+            options:["can","be able to","could"],
+            correct:"be able to"
+          },
+          {
+            id:"q4",
+            text:"4) She ___ swim very well now.",
+            options:["can","could"],
+            correct:"can"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:6,
+    title:"used to (past habits)",
+    level:"Module 2",
+    ruleEn:`<b>Rule (EN):</b> <b>used to</b> + V1 – past habits or states that are not true now.`,
+    ruleRu:`<b>Правило (RU):</b> <b>used to</b> + V1 – привычки или состояние в прошлом, которых сейчас нет.`,
+    formula:`(+): subject + used to + V1<br>
+             (-): didn’t use to + V1<br>
+             (?): Did + subject + use to + V1?`,
+    exercises:[
+      {
+        id:"6a",
+        title:"Ex.1 – Complete with used to.",
+        note:"Imagine past habits.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) I ___ (play) with toys, but now I play computer games.",
+            options:["used to play","use to play","used play"],
+            correct:"used to play"
+          },
+          {
+            id:"q2",
+            text:"2) She ___ (live) in a village, but now she lives in the city.",
+            options:["used to live","use to live","used live"],
+            correct:"used to live"
+          }
+        ]
+      },
+      {
+        id:"6b",
+        title:"Ex.2 – Negative form.",
+        note:"Choose the correct negative.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) He ___ get up so early. Now he must.",
+            options:["didn’t use to","didn’t used to","doesn’t used to"],
+            correct:"didn’t use to"
+          },
+          {
+            id:"q4",
+            text:"4) We ___ have online lessons before.",
+            options:["didn’t use to","haven’t used to"],
+            correct:"didn’t use to"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:7,
+    title:"-ed / -ing adjectives",
+    level:"Module 2",
+    ruleEn:`<b>Rule (EN):</b> <b>-ed</b> adjectives describe how people feel (bored, excited).<br>
+            <b>-ing</b> adjectives describe things (boring, exciting).`,
+    ruleRu:`<b>Правило (RU):</b> Прилагательные на <b>-ed</b> – чувства людей (bored).<br>
+            На <b>-ing</b> – характеристика предметов/ситуаций (boring).`,
+    formula:`I am bored (feeling).<br>
+             The film is boring (thing).`,
+    exercises:[
+      {
+        id:"7a",
+        title:"Ex.1 – Choose bored or boring.",
+        note:"Is it a feeling or a thing?",
+        questions:[
+          {
+            id:"q1",
+            text:"1) The lesson is very ___.",
+            options:["bored","boring"],
+            correct:"boring"
+          },
+          {
+            id:"q2",
+            text:"2) I am ___ in this class.",
+            options:["bored","boring"],
+            correct:"bored"
+          }
+        ]
+      },
+      {
+        id:"7b",
+        title:"Ex.2 – Choose interested or interesting.",
+        note:"Look at who/what we describe.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) The book is really ___.",
+            options:["interested","interesting"],
+            correct:"interesting"
+          },
+          {
+            id:"q4",
+            text:"4) We are ___ in grammar apps.",
+            options:["interested","interesting"],
+            correct:"interested"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:8,
+    title:"Adverbs & degree (quite / rather)",
+    level:"Module 2",
+    ruleEn:`<b>Rule (EN):</b> Adverbs describe verbs, adjectives or other adverbs.<br>
+            <b>quite / rather</b> – степень качества: довольно, достаточно.`,
+    ruleRu:`<b>Правило (RU):</b> Наречия описывают действие или признак (run quickly).<br>
+            <b>quite / rather</b> – «довольно, довольно-таки».`,
+    formula:`adj + -ly → adverb (quick → quickly)<br>
+             quite / rather + adj/adv`,
+    exercises:[
+      {
+        id:"8a",
+        title:"Ex.1 – Form adverbs.",
+        note:"Choose the correct adverb.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) He runs very ___. (quick)",
+            options:["quick","quickly","quicks"],
+            correct:"quickly"
+          },
+          {
+            id:"q2",
+            text:"2) She sings ___. (beautiful)",
+            options:["beautifully","beautifuly","beautifull"],
+            correct:"beautifully"
+          }
+        ]
+      },
+      {
+        id:"8b",
+        title:"Ex.2 – quite or rather?",
+        note:"Both mean «довольно», choose one.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) This exercise is ___ easy.",
+            options:["quite","rather"],
+            correct:"quite"
+          },
+          {
+            id:"q4",
+            text:"4) It’s ___ cold today. Take a jacket.",
+            options:["quite","rather"],
+            correct:"rather"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:9,
+    title:"should / shouldn’t (advice)",
+    level:"Module 2",
+    ruleEn:`<b>Rule (EN):</b> <b>should</b> = it is a good idea. <b>shouldn’t</b> = it isn’t a good idea.`,
+    ruleRu:`<b>Правило (RU):</b> <b>should</b> – совет «стоит сделать». <b>shouldn’t</b> – «не стоит делать».`,
+    formula:`should / shouldn’t + V1`,
+    exercises:[
+      {
+        id:"9a",
+        title:"Ex.1 – School advice.",
+        note:"Choose should or shouldn’t.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) You ___ do your homework every day.",
+            options:["should","shouldn’t"],
+            correct:"should"
+          },
+          {
+            id:"q2",
+            text:"2) You ___ be late for lessons.",
+            options:["should","shouldn’t"],
+            correct:"shouldn’t"
+          }
+        ]
+      },
+      {
+        id:"9b",
+        title:"Ex.2 – Health advice.",
+        note:"Choose the best advice.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) You ___ eat a lot of fruit and vegetables.",
+            options:["should","shouldn’t"],
+            correct:"should"
+          },
+          {
+            id:"q4",
+            text:"4) You ___ drink too many energy drinks.",
+            options:["should","shouldn’t"],
+            correct:"shouldn’t"
+          }
+        ]
+      }
+    ]
+  },
+
+  /* MODULE 3 */
+  {
+    id:10,
+    title:"Present Perfect (ever / never / just / already / yet / since / for)",
     level:"Module 3",
-    ruleEn:`<b>Rule (EN):</b> Use <b>will / won’t</b> for predictions, promises and decisions made at the moment of speaking.`,
-    ruleRu:`<b>Правило (RU):</b> Will / won’t используем для <b>предсказаний, обещаний</b> и решений «сейчас».`,
+    ruleEn:`<b>Rule (EN):</b> Present Perfect = have / has + V3.<br>
+            Use for life experience and results connected with now.`,
+    ruleRu:`<b>Правило (RU):</b> Present Perfect = have / has + V3.<br>
+            Используем для жизненного опыта и результата, важного сейчас.`,
+    formula:`(+): have / has + V3<br>
+             (-): haven’t / hasn’t + V3<br>
+             (?): Have / Has + subject + V3?`,
+    exercises:[
+      {
+        id:"10a",
+        title:"Ex.1 – ever / never.",
+        note:"Choose ever or never.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) Have you ___ been to London?",
+            options:["ever","never"],
+            correct:"ever"
+          },
+          {
+            id:"q2",
+            text:"2) She has ___ tried sushi.",
+            options:["ever","never"],
+            correct:"never"
+          }
+        ]
+      },
+      {
+        id:"10b",
+        title:"Ex.2 – just / already / yet / since / for.",
+        note:"Choose the best option.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) We have ___ finished our homework.",
+            options:["just","yet","ever"],
+            correct:"just"
+          },
+          {
+            id:"q4",
+            text:"4) I have lived here ___ 2015.",
+            options:["for","since"],
+            correct:"since"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:11,
+    title:"have been vs have gone",
+    level:"Module 3",
+    ruleEn:`<b>Rule (EN):</b> <b>have been</b> – visited and came back.<br>
+            <b>have gone</b> – went there and is still there, not back.`,
+    ruleRu:`<b>Правило (RU):</b> <b>have been</b> – «был и вернулся».<br>
+            <b>have gone</b> – «ушёл и ещё там».`,
+    formula:`He has been to London. (Now he is here.)<br>
+             He has gone to London. (Now he is in London.)`,
+    exercises:[
+      {
+        id:"11a",
+        title:"Ex.1 – been or gone?",
+        note:"Where is the person now?",
+        questions:[
+          {
+            id:"q1",
+            text:"1) My dad isn’t here. He has ___ to the shop.",
+            options:["been","gone"],
+            correct:"gone"
+          },
+          {
+            id:"q2",
+            text:"2) I have ___ to Paris twice. I’m at home now.",
+            options:["been","gone"],
+            correct:"been"
+          }
+        ]
+      },
+      {
+        id:"11b",
+        title:"Ex.2 – Choose.",
+        note:"Think about the situation.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) She has ___ to the dentist and hasn’t come back yet.",
+            options:["been","gone"],
+            correct:"gone"
+          },
+          {
+            id:"q4",
+            text:"4) We have ___ to that museum many times.",
+            options:["been","gone"],
+            correct:"been"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:12,
+    title:"Present Perfect vs Past Simple",
+    level:"Module 3",
+    ruleEn:`<b>Rule (EN):</b> Past Simple – finished action in the past, with time word (yesterday, last year).<br>
+            Present Perfect – experience or result, no exact past time.`,
+    ruleRu:`<b>Правило (RU):</b> Past Simple – завершённое действие с указанием времени.<br>
+            Present Perfect – опыт / результат без точного времени.`,
+    formula:`PS: I visited London last year.<br>
+             PP: I have visited London. (no time)`,
+    exercises:[
+      {
+        id:"12a",
+        title:"Ex.1 – Choose PS or PP.",
+        note:"Look at time words.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) I ___ (see) this film yesterday.",
+            options:["saw","have seen"],
+            correct:"saw"
+          },
+          {
+            id:"q2",
+            text:"2) I ___ (see) this film three times.",
+            options:["saw","have seen"],
+            correct:"have seen"
+          }
+        ]
+      },
+      {
+        id:"12b",
+        title:"Ex.2 – Time expressions.",
+        note:"Choose correct tense.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) She ___ (finish) her project just now.",
+            options:["has finished","finished"],
+            correct:"has finished"
+          },
+          {
+            id:"q4",
+            text:"4) We ___ (go) to the zoo last weekend.",
+            options:["went","have gone"],
+            correct:"went"
+          }
+        ]
+      }
+    ]
+  },
+
+  /* MODULE 4 */
+  {
+    id:13,
+    title:"will (predictions, instant decisions)",
+    level:"Module 4",
+    ruleEn:`<b>Rule (EN):</b> Use <b>will</b> for predictions and decisions made now.`,
+    ruleRu:`<b>Правило (RU):</b> <b>will</b> – предсказания и решения, принятые в момент речи.`,
     formula:`(+): subject + will + V1<br>
              (-): subject + won’t + V1`,
     exercises:[
       {
-        id:"5a",
+        id:"13a",
         title:"Ex.1 – Predictions.",
-        note:"Choose will or won’t.",
+        note:"Use will or won’t.",
         questions:[
           {
             id:"q1",
@@ -793,274 +1120,879 @@ const topics = [
             text:"2) They ___ be at school on Sunday.",
             options:["will","won’t"],
             correct:"won’t"
-          },
+          }
+        ]
+      },
+      {
+        id:"13b",
+        title:"Ex.2 – Instant decisions.",
+        note:"Choose correct form.",
+        questions:[
           {
             id:"q3",
-            text:"3) I’m sure you ___ pass the exam.",
-            options:["will","won’t"],
+            text:"3) It’s cold here. I ___ close the window.",
+            options:["will","am going to"],
             correct:"will"
           },
           {
             id:"q4",
-            text:"4) She ___ like this book.",
+            text:"4) Don’t worry, I ___ help you.",
+            options:["will","am going to"],
+            correct:"will"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:14,
+    title:"be going to (plans / predictions)",
+    level:"Module 4",
+    ruleEn:`<b>Rule (EN):</b> Use <b>be going to</b> for plans and intentions decided before speaking.`,
+    ruleRu:`<b>Правило (RU):</b> <b>be going to</b> – планы и намерения, решение принято заранее.`,
+    formula:`subject + am / is / are + going to + V1`,
+    exercises:[
+      {
+        id:"14a",
+        title:"Ex.1 – Plans.",
+        note:"Complete with be going to.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) We ___ visit our grandparents this weekend.",
+            options:["are going to","will","go"],
+            correct:"are going to"
+          },
+          {
+            id:"q2",
+            text:"2) She ___ buy a new dress.",
+            options:["is going to","are going to","will going to"],
+            correct:"is going to"
+          }
+        ]
+      },
+      {
+        id:"14b",
+        title:"Ex.2 – Negative plans.",
+        note:"Choose correct form.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) They ___ not ___ play football today.",
+            options:["are going to","aren’t going to","don’t going to"],
+            correct:"aren’t going to"
+          },
+          {
+            id:"q4",
+            text:"4) I ___ study tonight. I’m too tired.",
+            options:["am not going to","won’t going to"],
+            correct:"am not going to"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:15,
+    title:"Present Continuous for future (arrangements)",
+    level:"Module 4",
+    ruleEn:`<b>Rule (EN):</b> Use <b>Present Continuous</b> for fixed future arrangements (time + place).`,
+    ruleRu:`<b>Правило (RU):</b> Present Continuous – уже запланированные встречи / расписание (есть время и место).`,
+    formula:`subject + am / is / are + V-ing + future time`,
+    exercises:[
+      {
+        id:"15a",
+        title:"Ex.1 – Future arrangements.",
+        note:"Choose the correct form.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) We ___ (meet) our friends tomorrow.",
+            options:["are meeting","meet","will meet"],
+            correct:"are meeting"
+          },
+          {
+            id:"q2",
+            text:"2) She ___ (fly) to London next Monday.",
+            options:["is flying","will fly","flies"],
+            correct:"is flying"
+          }
+        ]
+      },
+      {
+        id:"15b",
+        title:"Ex.2 – Rewrite into Present Continuous.",
+        note:"Choose the correct answer.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) We go to the cinema on Friday. → We ___ to the cinema on Friday.",
+            options:["are going","will go"],
+            correct:"are going"
+          },
+          {
+            id:"q4",
+            text:"4) They leave on Tuesday. → They ___ on Tuesday.",
+            options:["are leaving","will leave"],
+            correct:"are leaving"
+          }
+        ]
+      }
+    ]
+  },
+
+  /* MODULE 5 */
+  {
+    id:16,
+    title:"Character adjectives (personality adjectives)",
+    level:"Module 5",
+    ruleEn:`<b>Rule (EN):</b> Character adjectives describe what people are like (kind, shy, friendly, lazy).`,
+    ruleRu:`<b>Правило (RU):</b> Прилагательные характера описывают людей (добрый, шумный, ленивый и т.д.).`,
+    formula:`be + adj (She is friendly. He is lazy.)`,
+    exercises:[
+      {
+        id:"16a",
+        title:"Ex.1 – Choose the best adjective.",
+        note:"Think about positive / negative meaning.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) She always helps people. She is ___.",
+            options:["selfish","kind"],
+            correct:"kind"
+          },
+          {
+            id:"q2",
+            text:"2) He never does his homework. He is ___.",
+            options:["hard-working","lazy"],
+            correct:"lazy"
+          }
+        ]
+      },
+      {
+        id:"16b",
+        title:"Ex.2 – Character adjectives.",
+        note:"Choose the correct one.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) My friend likes talking to everyone. He is ___.",
+            options:["shy","sociable"],
+            correct:"sociable"
+          },
+          {
+            id:"q4",
+            text:"4) She is afraid of speaking in public. She is ___.",
+            options:["confident","shy"],
+            correct:"shy"
+          }
+        ]
+      }
+    ]
+  },
+
+  /* MODULE 6 */
+  {
+    id:17,
+    title:"Passive Voice (Present Simple & Past Simple)",
+    level:"Module 6",
+    ruleEn:`<b>Rule (EN):</b> Passive = be + V3. Focus on the action, not the doer.`,
+    ruleRu:`<b>Правило (RU):</b> Пассивный залог = be + V3. Важно действие, а не тот, кто его делает.`,
+    formula:`Present: am / is / are + V3 (The food is cooked.)<br>
+             Past: was / were + V3 (The food was cooked.)`,
+    exercises:[
+      {
+        id:"17a",
+        title:"Ex.1 – Present Passive.",
+        note:"Choose the correct form.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) English ___ (speak) all over the world.",
+            options:["is spoken","speaks","is speaking"],
+            correct:"is spoken"
+          },
+          {
+            id:"q2",
+            text:"2) The homework ___ (check) by the teacher.",
+            options:["is checked","checked","was checked"],
+            correct:"is checked"
+          }
+        ]
+      },
+      {
+        id:"17b",
+        title:"Ex.2 – Past Passive.",
+        note:"Choose the correct answer.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) The film ___ (make) in 2010.",
+            options:["was made","is made","made"],
+            correct:"was made"
+          },
+          {
+            id:"q4",
+            text:"4) The letters ___ (send) yesterday.",
+            options:["were sent","are sent"],
+            correct:"were sent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:18,
+    title:"It / There structures",
+    level:"Module 6",
+    ruleEn:`<b>Rule (EN):</b> <b>It</b> for time, weather, distance: It is cold.<br>
+            <b>There is / There are</b> to say something exists: There is a park.`,
+    ruleRu:`<b>Правило (RU):</b> <b>It</b> – погода, время, расстояние. <b>There is / There are</b> – «есть / существует».`,
+    formula:`It is cold. It is 5 o'clock.<br>
+             There is a cat. There are two cats.`,
+    exercises:[
+      {
+        id:"18a",
+        title:"Ex.1 – it or there?",
+        note:"Choose the correct subject.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) ___ is a big park in our town.",
+            options:["It","There"],
+            correct:"There"
+          },
+          {
+            id:"q2",
+            text:"2) ___ is very hot today.",
+            options:["It","There"],
+            correct:"It"
+          }
+        ]
+      },
+      {
+        id:"18b",
+        title:"Ex.2 – there is / there are.",
+        note:"Choose singular or plural.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) ___ a dog in the garden.",
+            options:["There is","There are"],
+            correct:"There is"
+          },
+          {
+            id:"q4",
+            text:"4) ___ many students in the classroom.",
+            options:["There is","There are"],
+            correct:"There are"
+          }
+        ]
+      }
+    ]
+  },
+
+  /* MODULE 7 */
+  {
+    id:19,
+    title:"Past Continuous",
+    level:"Module 7",
+    ruleEn:`<b>Rule (EN):</b> Past Continuous – action in progress at a specific moment in the past.`,
+    ruleRu:`<b>Правило (RU):</b> Past Continuous – длительное действие в определённый момент в прошлом.`,
+    formula:`subject + was / were + V-ing`,
+    exercises:[
+      {
+        id:"19a",
+        title:"Ex.1 – Complete with Past Continuous.",
+        note:"Choose the correct form.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) I ___ (do) my homework at 6 p.m. yesterday.",
+            options:["was doing","did","am doing"],
+            correct:"was doing"
+          },
+          {
+            id:"q2",
+            text:"2) They ___ (play) football when it started to rain.",
+            options:["were playing","played","are playing"],
+            correct:"were playing"
+          }
+        ]
+      },
+      {
+        id:"19b",
+        title:"Ex.2 – Negative form.",
+        note:"Choose the correct negative.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) We ___ (not sleep) when the phone rang.",
+            options:["weren’t sleeping","didn’t sleep"],
+            correct:"weren’t sleeping"
+          },
+          {
+            id:"q4",
+            text:"4) She ___ (not watch) TV at that time.",
+            options:["wasn’t watching","didn’t watching"],
+            correct:"wasn’t watching"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:20,
+    title:"Past Simple vs Past Continuous",
+    level:"Module 7",
+    ruleEn:`<b>Rule (EN):</b> Past Continuous – long action (background).<br>
+            Past Simple – short action that interrupts.`,
+    ruleRu:`<b>Правило (RU):</b> Past Continuous – длительное действие-фон.<br>
+            Past Simple – короткое действие, которое прерывает его.`,
+    formula:`PC + when + PS<br>
+             PS + while + PC`,
+    exercises:[
+      {
+        id:"20a",
+        title:"Ex.1 – Complete with correct tense.",
+        note:"Choose Past Simple or Past Continuous.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) I ___ (walk) home when I ___ (see) my friend.",
+            options:["was walking / saw","walked / was seeing"],
+            correct:"was walking / saw"
+          },
+          {
+            id:"q2",
+            text:"2) She ___ (watch) TV when the lights ___ (go) off.",
+            options:["was watching / went","watched / was going"],
+            correct:"was watching / went"
+          }
+        ]
+      },
+      {
+        id:"20b",
+        title:"Ex.2 – when or while?",
+        note:"Choose the right word.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) I was reading ___ my brother was playing.",
+            options:["when","while"],
+            correct:"while"
+          },
+          {
+            id:"q4",
+            text:"4) ___ I was walking to school, it started to snow.",
+            options:["When","While"],
+            correct:"When"
+          }
+        ]
+      }
+    ]
+  },
+
+  /* MODULE 8 */
+  {
+    id:21,
+    title:"Zero Conditional",
+    level:"Module 8",
+    ruleEn:`<b>Rule (EN):</b> Zero Conditional – facts and general truths.<br>
+            If + Present Simple, Present Simple.`,
+    ruleRu:`<b>Правило (RU):</b> Нулевой условный – факты и всегда верные вещи.<br>
+            If + Present Simple, Present Simple.`,
+    formula:`If + Present Simple, Present Simple.`,
+    exercises:[
+      {
+        id:"21a",
+        title:"Ex.1 – Choose the correct form.",
+        note:"Use Present Simple.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) If you ___ (heat) ice, it melts.",
+            options:["heat","will heat","heats"],
+            correct:"heat"
+          },
+          {
+            id:"q2",
+            text:"2) If it rains, the ground ___.",
+            options:["gets wet","will get wet"],
+            correct:"gets wet"
+          }
+        ]
+      },
+      {
+        id:"21b",
+        title:"Ex.2 – Complete sentences.",
+        note:"Zero conditional facts.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) If people don’t sleep, they ___.",
+            options:["are tired","will be tired"],
+            correct:"are tired"
+          },
+          {
+            id:"q4",
+            text:"4) If you study hard, you __ good marks.",
+            options:["get","will get"],
+            correct:"get"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:22,
+    title:"First Conditional",
+    level:"Module 8",
+    ruleEn:`<b>Rule (EN):</b> First Conditional – real future possibility.<br>
+            If + Present Simple, will + V1.`,
+    ruleRu:`<b>Правило (RU):</b> Первый условный – реальная ситуация в будущем.<br>
+            If + Present Simple, will + V1.`,
+    formula:`If + Present Simple, will + V1`,
+    exercises:[
+      {
+        id:"22a",
+        title:"Ex.1 – Complete with will.",
+        note:"Use First Conditional.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) If it rains, we ___ stay at home.",
+            options:["will","won’t","will to"],
+            correct:"will"
+          },
+          {
+            id:"q2",
+            text:"2) If I study, I ___ pass the exam.",
             options:["will","won’t"],
             correct:"will"
           }
         ]
       },
       {
-        id:"5b",
-        title:"Ex.2 – Promises and instant decisions.",
-        note:"Choose the correct form.",
+        id:"22b",
+        title:"Ex.2 – Negative.",
+        note:"Choose will or won’t.",
         questions:[
           {
-            id:"q5",
-            text:"1) Don’t worry, I ___ help you.",
-            options:["will","am going to"],
-            correct:"will"
+            id:"q3",
+            text:"3) If you don’t hurry, you ___ catch the bus.",
+            options:["won’t","will"],
+            correct:"won’t"
           },
           {
-            id:"q6",
-            text:"2) It’s cold. I ___ close the window.",
-            options:["will","am going to"],
-            correct:"will"
-          },
-          {
-            id:"q7",
-            text:"3) I’m busy now. I ___ call you later.",
-            options:["will","won’t"],
-            correct:"will"
-          },
-          {
-            id:"q8",
-            text:"4) I’m tired. I ___ not go to the party.",
-            options:["will","will","won’t"],
+            id:"q4",
+            text:"4) If he doesn’t eat, he ___ feel good.",
+            options:["won’t","will"],
             correct:"won’t"
           }
         ]
       }
     ]
   },
-
   {
-    id:6,
-    title:"Present Perfect – ever, never, just, already, yet",
-    level:"Module 4",
-    ruleEn:`<b>Rule (EN):</b> Present Perfect = have / has + V3. We use it for life experience and results connected with now.`,
-    ruleRu:`<b>Правило (RU):</b> Present Perfect = have / has + V3. Используем для <b>жизненного опыта</b> и результата, важного сейчас.`,
-    formula:`(+): have / has + V3<br>
-             (-): haven’t / hasn’t + V3<br>
-             (?): Have / Has + subject + V3?`,
+    id:23,
+    title:"Second Conditional",
+    level:"Module 8",
+    ruleEn:`<b>Rule (EN):</b> Second Conditional – unreal / imaginary situation now.<br>
+            If + Past Simple, would + V1.`,
+    ruleRu:`<b>Правило (RU):</b> Второй условный – нереальная, воображаемая ситуация сейчас.<br>
+            If + Past Simple, would + V1.`,
+    formula:`If + Past Simple, would + V1`,
     exercises:[
       {
-        id:"6a",
-        title:"Ex.1 – ever / never.",
+        id:"23a",
+        title:"Ex.1 – Imagination.",
+        note:"Choose the correct form.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) If I ___ rich, I would travel a lot.",
+            options:["am","were","was"],
+            correct:"were"
+          },
+          {
+            id:"q2",
+            text:"2) If she had more time, she ___ learn Spanish.",
+            options:["would","will","would to"],
+            correct:"would"
+          }
+        ]
+      },
+      {
+        id:"23b",
+        title:"Ex.2 – Complete.",
+        note:"Choose correct option.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) If we lived near the sea, we ___ swim every day.",
+            options:["would","will"],
+            correct:"would"
+          },
+          {
+            id:"q4",
+            text:"4) If he ___ taller, he would play basketball.",
+            options:["was","is"],
+            correct:"was"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:24,
+    title:"Modals (must / have to / need to / might)",
+    level:"Module 8",
+    ruleEn:`<b>Rule (EN):</b> <b>must</b> – strong personal obligation. <b>have to</b> – external rule.<br>
+            <b>need to</b> – necessity. <b>might</b> – possibility.`,
+    ruleRu:`<b>Правило (RU):</b> <b>must</b> – личная обязанность, <b>have to</b> – правило.<br>
+            <b>need to</b> – необходимость, <b>might</b> – возможно.`,
+    formula:`must / have to / need to + V1<br>
+             might + V1`,
+    exercises:[
+      {
+        id:"24a",
+        title:"Ex.1 – School rules.",
+        note:"Choose must or have to.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) We ___ wear a uniform at school. It’s a rule.",
+            options:["have to","must"],
+            correct:"have to"
+          },
+          {
+            id:"q2",
+            text:"2) I ___ study more. I want a good mark.",
+            options:["must","have to"],
+            correct:"must"
+          }
+        ]
+      },
+      {
+        id:"24b",
+        title:"Ex.2 – need to / might.",
+        note:"Choose the correct modal.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) You ___ see a doctor. You are very ill.",
+            options:["need to","might"],
+            correct:"need to"
+          },
+          {
+            id:"q4",
+            text:"4) Take an umbrella. It ___ rain.",
+            options:["might","must"],
+            correct:"might"
+          }
+        ]
+      }
+    ]
+  },
+
+  /* MODULE 9 */
+  {
+    id:25,
+    title:"Verb patterns (verb + -ing / to-infinitive / bare infinitive)",
+    level:"Module 9",
+    ruleEn:`<b>Rule (EN):</b> Some verbs take <b>to + V1</b> (want to go), some take <b>V-ing</b> (enjoy reading), some take bare infinitive (make him do).`,
+    ruleRu:`<b>Правило (RU):</b> После разных глаголов идут разные формы: <b>to + V1</b>, <b>V-ing</b> или инфинитив без to.`,
+    formula:`want to do, decide to go<br>
+             enjoy doing, hate doing<br>
+             make sb do, let sb do`,
+    exercises:[
+      {
+        id:"25a",
+        title:"Ex.1 – to + V or V-ing?",
+        note:"Choose the correct form.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) I want ___ (go) to the cinema.",
+            options:["to go","going"],
+            correct:"to go"
+          },
+          {
+            id:"q2",
+            text:"2) She enjoys ___ (read) books.",
+            options:["to read","reading"],
+            correct:"reading"
+          }
+        ]
+      },
+      {
+        id:"25b",
+        title:"Ex.2 – bare infinitive or to-infinitive?",
+        note:"Think about the pattern.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) My parents made me ___ (clean) my room.",
+            options:["clean","to clean"],
+            correct:"clean"
+          },
+          {
+            id:"q4",
+            text:"4) I decided ___ (start) a new hobby.",
+            options:["start","to start"],
+            correct:"to start"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:26,
+    title:"Relative pronouns (who / which / where)",
+    level:"Module 9",
+    ruleEn:`<b>Rule (EN):</b> <b>who</b> – people, <b>which</b> – things, <b>where</b> – places.`,
+    ruleRu:`<b>Правило (RU):</b> <b>who</b> – люди, <b>which</b> – предметы, <b>where</b> – места.`,
+    formula:`This is the boy who plays football.<br>
+             This is the book which I like.<br>
+             This is the place where I live.`,
+    exercises:[
+      {
+        id:"26a",
+        title:"Ex.1 – Choose who, which or where.",
+        note:"Look at the noun.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) The girl ___ is sitting there is my sister.",
+            options:["who","which","where"],
+            correct:"who"
+          },
+          {
+            id:"q2",
+            text:"2) This is the park ___ we play football.",
+            options:["who","which","where"],
+            correct:"where"
+          }
+        ]
+      },
+      {
+        id:"26b",
+        title:"Ex.2 – Choose the correct relative pronoun.",
+        note:"People or things?",
+        questions:[
+          {
+            id:"q3",
+            text:"3) The book ___ I’m reading is very interesting.",
+            options:["who","which","where"],
+            correct:"which"
+          },
+          {
+            id:"q4",
+            text:"4) The man ___ teaches us English is very kind.",
+            options:["who","which","where"],
+            correct:"who"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:27,
+    title:"Determiners (all / other)",
+    level:"Module 9",
+    ruleEn:`<b>Rule (EN):</b> <b>all</b> – every person/thing in a group. <b>other</b> – different / remaining.`,
+    ruleRu:`<b>Правило (RU):</b> <b>all</b> – все. <b>other</b> – другие, остальные.`,
+    formula:`all + plural noun<br>
+             other / another + noun`,
+    exercises:[
+      {
+        id:"27a",
+        title:"Ex.1 – all or other?",
         note:"Choose the correct word.",
         questions:[
           {
             id:"q1",
-            text:"1) Have you ___ been to London?",
-            options:["ever","never"],
-            correct:"ever"
+            text:"1) ___ students in my class like English.",
+            options:["All","Other"],
+            correct:"All"
           },
           {
             id:"q2",
-            text:"2) She has ___ travelled by plane.",
-            options:["ever","never"],
-            correct:"never"
-          },
-          {
-            id:"q3",
-            text:"3) Have they ___ tried sushi?",
-            options:["ever","never"],
-            correct:"ever"
-          },
-          {
-            id:"q4",
-            text:"4) I have ___ seen this film before.",
-            options:["never","ever"],
-            correct:"never"
+            text:"2) Some people are late, but ___ are here.",
+            options:["all","others"],
+            correct:"others"
           }
         ]
       },
       {
-        id:"6b",
-        title:"Ex.2 – just / already / yet.",
+        id:"27b",
+        title:"Ex.2 – another / other.",
         note:"Choose the best option.",
         questions:[
           {
-            id:"q5",
-            text:"1) She has ___ finished her homework.",
-            options:["just","yet","ever"],
-            correct:"just"
+            id:"q3",
+            text:"3) I’m still hungry. I want ___ sandwich.",
+            options:["another","other"],
+            correct:"another"
           },
           {
-            id:"q6",
-            text:"2) Have you done the project ___?",
-            options:["yet","already","just"],
-            correct:"yet"
-          },
-          {
-            id:"q7",
-            text:"3) We have ___ seen this movie. Let’s watch something else.",
-            options:["already","just","never"],
-            correct:"already"
-          },
-          {
-            id:"q8",
-            text:"4) I haven’t called him ___ .",
-            options:["yet","already","ever"],
-            correct:"yet"
+            id:"q4",
+            text:"4) Do you have any ___ questions?",
+            options:["other","another"],
+            correct:"other"
           }
         ]
       }
     ]
   },
-
   {
-    id:7,
-    title:"Comparatives and Superlatives",
-    level:"Module 5",
-    ruleEn:`<b>Rule (EN):</b> Comparatives compare two things (taller, more interesting). Superlatives show the most (the tallest, the most interesting).`,
-    ruleRu:`<b>Правило (RU):</b> Сравнительная степень – сравниваем два объекта (taller). Превосходная – самый (the tallest).`,
-    formula:`short adj: tall → taller → the tallest<br>
-             long adj: interesting → more interesting → the most interesting<br>
-             irregular: good → better → the best`,
+    id:28,
+    title:"some / any / every / no + compounds",
+    level:"Module 9",
+    ruleEn:`<b>Rule (EN):</b> some-, any-, every-, no- + body / thing / where make pronouns (somebody, nothing, everywhere).`,
+    ruleRu:`<b>Правило (RU):</b> some-, any-, every-, no- + body/thing/where → местоимения (somebody, anything, nowhere и т.д.).`,
+    formula:`somebody, anybody, everybody, nobody<br>
+             something, anything, everything, nothing<br>
+             somewhere, anywhere, everywhere, nowhere`,
     exercises:[
       {
-        id:"7a",
-        title:"Ex.1 – Comparatives.",
-        note:"Choose the correct form.",
+        id:"28a",
+        title:"Ex.1 – Choose the correct compound.",
+        note:"Think about meaning.",
         questions:[
           {
             id:"q1",
-            text:"1) My house is ___ than yours.",
-            options:["bigger","the biggest","big"],
-            correct:"bigger"
+            text:"1) I can’t find my phone. It’s ___.",
+            options:["nowhere","everywhere"],
+            correct:"nowhere"
           },
           {
             id:"q2",
-            text:"2) English is ___ than maths for me.",
-            options:["easier","the easiest","easy"],
-            correct:"easier"
-          },
-          {
-            id:"q3",
-            text:"3) This book is ___ than that one.",
-            options:["more interesting","the most interesting","interesting"],
-            correct:"more interesting"
-          },
-          {
-            id:"q4",
-            text:"4) Today is ___ than yesterday.",
-            options:["colder","the coldest","cold"],
-            correct:"colder"
+            text:"2) ___ is knocking at the door.",
+            options:["Somebody","Nothing"],
+            correct:"Somebody"
           }
         ]
       },
       {
-        id:"7b",
-        title:"Ex.2 – Superlatives.",
-        note:"Choose the correct form.",
+        id:"28b",
+        title:"Ex.2 – some / any / no.",
+        note:"Choose correct part.",
         questions:[
           {
-            id:"q5",
-            text:"1) Mount Everest is ___ mountain in the world.",
-            options:["the highest","higher","the most high"],
-            correct:"the highest"
+            id:"q3",
+            text:"3) I don’t have ___ money.",
+            options:["any","some"],
+            correct:"any"
           },
           {
-            id:"q6",
-            text:"2) This is ___ film I’ve ever seen.",
-            options:["the best","better","good"],
-            correct:"the best"
-          },
-          {
-            id:"q7",
-            text:"3) February is ___ month of the year.",
-            options:["the shortest","shorter","the most short"],
-            correct:"the shortest"
-          },
-          {
-            id:"q8",
-            text:"4) He is ___ student in the class.",
-            options:["the most hard-working","harder","more hard-working"],
-            correct:"the most hard-working"
+            id:"q4",
+            text:"4) There is ___ in the box. It’s empty.",
+            options:["nothing","anything"],
+            correct:"nothing"
           }
         ]
       }
     ]
   },
-
   {
-    id:8,
-    title:"Must / mustn’t / have to",
-    level:"Module 6",
-    ruleEn:`<b>Rule (EN):</b> Use <b>must</b> for strong personal obligation, <b>mustn’t</b> for prohibition, <b>have to</b> for rules from outside.`,
-    ruleRu:`<b>Правило (RU):</b> Must – сильная личная обязанность. Mustn’t – запрет. Have to – правило, обязанность «извне».`,
-    formula:`must + V1<br>
-             mustn’t + V1<br>
-             have / has to + V1`,
+    id:29,
+    title:"Reported speech – statements",
+    level:"Module 9",
+    ruleEn:`<b>Rule (EN):</b> In reported speech, tenses usually go one step back (Present → Past, will → would).`,
+    ruleRu:`<b>Правило (RU):</b> В косвенной речи времена «откатываются» назад (Present → Past, will → would).`,
+    formula:`“I am tired.” → He said (that) he was tired.<br>
+             “I will go.” → She said (that) she would go.`,
     exercises:[
       {
-        id:"8a",
-        title:"Ex.1 – School rules.",
-        note:"Choose must or mustn’t.",
+        id:"29a",
+        title:"Ex.1 – Change to reported speech.",
+        note:"Choose the correct answer.",
         questions:[
           {
             id:"q1",
-            text:"1) You ___ do your homework.",
-            options:["must","mustn’t"],
-            correct:"must"
+            text:"1) “I am busy.” → He said he ___ busy.",
+            options:["was","is"],
+            correct:"was"
           },
           {
             id:"q2",
-            text:"2) Students ___ use their phones in class.",
-            options:["mustn’t","must"],
-            correct:"mustn’t"
-          },
-          {
-            id:"q3",
-            text:"3) You ___ be late for lessons.",
-            options:["mustn’t","must"],
-            correct:"mustn’t"
-          },
-          {
-            id:"q4",
-            text:"4) We ___ respect our teachers.",
-            options:["must","mustn’t"],
-            correct:"must"
+            text:"2) “I will help you.” → She said she ___ help me.",
+            options:["would","will"],
+            correct:"would"
           }
         ]
       },
       {
-        id:"8b",
-        title:"Ex.2 – have to / don’t have to.",
-        note:"Choose have to or don’t have to.",
+        id:"29b",
+        title:"Ex.2 – Choose the correct tense.",
+        note:"Reported statements.",
         questions:[
           {
-            id:"q5",
-            text:"1) I ___ wear a uniform at my school. It’s the rule.",
-            options:["have to","don’t have to"],
-            correct:"have to"
+            id:"q3",
+            text:"3) “I like this film.” → He said he ___ that film.",
+            options:["liked","likes"],
+            correct:"liked"
           },
           {
-            id:"q6",
-            text:"2) We ___ go to school on Sunday. It’s a holiday.",
-            options:["have to","don’t have to"],
-            correct:"don’t have to"
+            id:"q4",
+            text:"4) “We are going home.” → They said they ___ going home.",
+            options:["were","are"],
+            correct:"were"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id:30,
+    title:"said / told, requests & commands (reported speech)",
+    level:"Module 9",
+    ruleEn:`<b>Rule (EN):</b> <b>said</b> – usually without object; <b>told</b> – with object (told me).<br>
+            Requests and commands: told / asked + object + to V1 / not to V1.`,
+    ruleRu:`<b>Правило (RU):</b> <b>said</b> – «сказал»; <b>told + object</b> – «сказал кому-то».<br>
+            Просьбы и приказы: told / asked + объект + to V1 / not to V1.`,
+    formula:`He said (that)...<br>
+             He told me (that)...<br>
+             She told me to sit down.<br>
+             She told me not to be late.`,
+    exercises:[
+      {
+        id:"30a",
+        title:"Ex.1 – said or told?",
+        note:"Remember: told + object.",
+        questions:[
+          {
+            id:"q1",
+            text:"1) He ___ me that he was tired.",
+            options:["told","said"],
+            correct:"told"
           },
           {
-            id:"q7",
-            text:"3) She ___ get up early tomorrow. She has an exam.",
-            options:["has to","doesn’t have to"],
-            correct:"has to"
+            id:"q2",
+            text:"2) She ___ that she was happy.",
+            options:["said","told"],
+            correct:"said"
+          }
+        ]
+      },
+      {
+        id:"30b",
+        title:"Ex.2 – requests and commands.",
+        note:"Choose correct reported form.",
+        questions:[
+          {
+            id:"q3",
+            text:"3) “Please help me.” → She asked me ___ her.",
+            options:["to help","help"],
+            correct:"to help"
           },
           {
-            id:"q8",
-            text:"4) You ___ pay for this book, it’s free.",
-            options:["don’t have to","have to"],
-            correct:"don’t have to"
+            id:"q4",
+            text:"4) “Don’t be late.” → My mum told me ___ late.",
+            options:["not to be","to not be"],
+            correct:"not to be"
           }
         ]
       }
@@ -1070,8 +2002,8 @@ const topics = [
 
 /* ---------- STATE & STORAGE ---------- */
 
-let currentUser = null;     // {name, code, progress:{}}
-let currentTopic = null;    // topic object
+let currentUser = null;   // {name, code, progress:{}}
+let currentTopic = null;
 
 function userKey(code){
   return "aiBayan7_user_" + code;
@@ -1126,7 +2058,7 @@ function handleLogin(){
   if(!user){
     user = {name, code, progress:{}};
   }else{
-    user.name = name; // обновим имя при входе
+    user.name = name;
   }
   currentUser = user;
   saveUser();
@@ -1162,7 +2094,7 @@ function renderTopics(){
   list.innerHTML = "";
 
   const total = getTotalStars(currentUser);
-  starsInfo.textContent = `Your stars: ${total}`;
+  starsInfo.textContent = `Your total stars: ${total}`;
 
   topics.forEach((t,idx)=>{
     const card = document.createElement("div");
@@ -1178,14 +2110,13 @@ function renderTopics(){
 
     const starSpan = document.createElement("span");
     starSpan.className = "topic-stars";
-
     const topicStars = getTopicStars(t.id);
     starSpan.textContent = `★ ${topicStars}`;
     top.appendChild(starSpan);
 
     const level = document.createElement("div");
     level.className = "topic-level";
-    level.textContent = t.level + " · Grammar";
+    level.textContent = t.level + " · Grammar B";
 
     card.appendChild(top);
     card.appendChild(level);
@@ -1267,7 +2198,7 @@ function checkExercise(topicId, exId){
   const resEl = document.getElementById(`res_${topicId}_${exId}`);
 
   let correct = 0;
-  let total = ex.questions.length;
+  const total = ex.questions.length;
 
   ex.questions.forEach(q=>{
     const name = `t${topicId}_e${exId}_q${q.id}`;
@@ -1279,7 +2210,6 @@ function checkExercise(topicId, exId){
     }
   });
 
-  // previous best for this exercise
   if(!currentUser.progress) currentUser.progress = {};
   if(!currentUser.progress[topicId]) currentUser.progress[topicId] = {};
   const prevBest = currentUser.progress[topicId][exId] || 0;
@@ -1287,14 +2217,14 @@ function checkExercise(topicId, exId){
   currentUser.progress[topicId][exId] = newBest;
   saveUser();
   updateHeader();
-  renderTopics(); // обновим звезды на главном экране
+  renderTopics();
 
   const gained = newBest - prevBest;
   if(correct === total){
     resEl.textContent = `Perfect: ${correct}/${total}. New stars: ${gained}.`;
     resEl.className = "exercise-result ok";
   }else{
-    resEl.textContent = `You got ${correct}/${total} correct. Best result saved. New stars: ${gained}.`;
+    resEl.textContent = `You got ${correct}/${total}. Best result saved. New stars: ${gained}.`;
     resEl.className = "exercise-result bad";
   }
 }
