@@ -17,6 +17,7 @@
       --border-soft:#f2c4c4;
       --danger:#b71c1c;
       --success:#1b5e20;
+      --accent:#ffb703;
     }
 
     *{
@@ -363,11 +364,44 @@
       font-size:0.85rem;
     }
 
-    .options-row label{
+    .option-label{
       margin:0;
       display:flex;
       align-items:center;
       gap:4px;
+    }
+
+    .option-label input{
+      accent-color:var(--red-main);
+    }
+
+    .opt-text{
+      margin-right:2px;
+    }
+
+    .opt-mark{
+      min-width:1em;
+      font-size:0.95rem;
+    }
+
+    .option-label.correct-chosen .opt-text{
+      color:var(--success);
+      font-weight:600;
+    }
+
+    .option-label.correct-chosen .opt-mark::before{
+      content:"✓";
+      color:var(--success);
+    }
+
+    .option-label.wrong-chosen .opt-text{
+      color:var(--danger);
+      text-decoration:line-through;
+    }
+
+    .option-label.wrong-chosen .opt-mark::before{
+      content:"✗";
+      color:var(--danger);
     }
 
     .check-row{
@@ -417,18 +451,13 @@
   <section id="loginScreen" class="screen active">
     <div class="login-card">
       <h2>Login</h2>
-      <p>Enter your <b>Name</b> and <b>Code</b>. Ask your teacher for the code.</p>
+      <p>Enter your <b>Name</b> and <b>Code</b>. The teacher gives this code in class.</p>
 
       <label for="loginName">Name</label>
-      <input id="loginName" type="text" placeholder="Example: Сырым7Б" />
+      <input id="loginName" type="text" placeholder="Your name" />
 
       <label for="loginCode">Code</label>
-      <input id="loginCode" type="number" placeholder="Example: 701" />
-
-      <div class="hint">
-        For demo: any name + code from <b>701–720</b> is accepted.<br>
-        (You can change this range for your class later.)
-      </div>
+      <input id="loginCode" type="number" placeholder="Your code" />
 
       <div id="loginError" class="error-msg"></div>
 
@@ -2049,8 +2078,9 @@ function handleLogin(){
     return;
   }
   const code = Number(codeStr);
+  // диапазон оставляем технически, но без подсказки на экране
   if(Number.isNaN(code) || code < 701 || code > 720){
-    errorEl.textContent = "This code is not valid for Grade 7 (use 701–720).";
+    errorEl.textContent = "This code is not valid. Ask your teacher.";
     return;
   }
 
@@ -2160,9 +2190,13 @@ function openTopic(id){
       const name = `t${topic.id}_e${ex.id}_q${q.id}`;
       html += `<div class="question">${q.text}</div><div class="options-row">`;
       q.options.forEach(opt=>{
-        const optId = name + "_" + opt.replace(/\s+/g,"_");
-        html += `<label><input type="radio" name="${name}" value="${opt}" id="${optId}">
-                 <span>${opt}</span></label>`;
+        const safe = opt.replace(/\s+/g,"_");
+        const optId = name + "_" + safe;
+        html += `<label class="option-label">
+                   <input type="radio" name="${name}" value="${opt}" id="${optId}">
+                   <span class="opt-text">${opt}</span>
+                   <span class="opt-mark"></span>
+                 </label>`;
       });
       html += `</div>`;
     });
@@ -2187,7 +2221,7 @@ function goMain(){
   showScreen("mainScreen");
 }
 
-/* ---------- CHECKING & STARS ---------- */
+/* ---------- CHECKING & STARS + ✓ / ✗ ---------- */
 
 function checkExercise(topicId, exId){
   const topic = topics.find(t=>t.id===topicId);
@@ -2203,11 +2237,37 @@ function checkExercise(topicId, exId){
   ex.questions.forEach(q=>{
     const name = `t${topicId}_e${exId}_q${q.id}`;
     const radios = document.querySelectorAll(`input[name="${name}"]`);
-    let chosen = null;
-    radios.forEach(r=>{ if(r.checked) chosen = r.value; });
-    if(chosen && chosen.trim() === q.correct.trim()){
-      correct++;
+    let chosenValue = null;
+
+    // очистить старые галочки/крестики
+    radios.forEach(r=>{
+      const label = r.closest("label");
+      if(label){
+        label.classList.remove("correct-chosen","wrong-chosen");
+      }
+      if(r.checked){
+        chosenValue = r.value;
+      }
+    });
+
+    // если ничего не выбрано – пропускаем вопрос
+    if(!chosenValue){
+      return;
     }
+
+    radios.forEach(r=>{
+      const label = r.closest("label");
+      if(!label) return;
+
+      if(r.checked){
+        if(r.value.trim() === q.correct.trim()){
+          label.classList.add("correct-chosen");
+          correct++;
+        }else{
+          label.classList.add("wrong-chosen");
+        }
+      }
+    });
   });
 
   if(!currentUser.progress) currentUser.progress = {};
@@ -2220,7 +2280,7 @@ function checkExercise(topicId, exId){
   renderTopics();
 
   const gained = newBest - prevBest;
-  if(correct === total){
+  if(correct === total && total > 0){
     resEl.textContent = `Perfect: ${correct}/${total}. New stars: ${gained}.`;
     resEl.className = "exercise-result ok";
   }else{
